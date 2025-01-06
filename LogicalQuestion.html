@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let rev = (user) => {
+  return user.split("").reverse().join('');
+}
+let check_palindrome = (user) => {
+  if (user == rev(user)) {
+    console.log(`${user} is palindrome`)
+  }
+  else {
+    console.log(`${user} is not palindrome`)
+  }
+}
+let factorial = (num) => {
+  let result = 1;
+  for (let i = 1; i <= num; i++) {
+    result *= i;
+  }
+  return console.log(result);
+}
+let FizzBuzz=()=>{
+  for (let i = 1; i <= 100; i++) {
+    if(i%3==0 && i%5==0){
+      console.log('FizzBizz');
+    } else
+    if(i%3==0){
+      console.log('Fizz');
+    } else 
+    if(i%5==0){
+      console.log('Bizz');
+    } else 
+    {
+      console.log(i);
+    }
+  }
+}
+
+let Largest_in_array =()=>{
+  let arr = [1,2,3,7,5,9,4,4];
+  largest=0;
+  for(let i=0; i<arr.length; i++){
+    if(arr[i]>arr[i+1]){
+      largest = arr[i];
+    }
+  }
+  console.log(largest)
+}
+let Largest_in_array_using_math =()=>{
+  let arr = [1,2,3,7,5,9,4,4];
+  console.log(Math.max(...arr));
+  }
+// Largest_in_array_using_math();
+
+let remove_duplicate=(arr)=>{
+  return console.log([...new Set(arr)])
+  }
+remove_duplicate([1,2,2,3,4,4,5,6]);
+
+let anagrams=()=>{
+  let str1 = "listen"
+  let str2 = "silent"
+  let sorted_str1 = str1.split('').sort().join('');
+  let sorted_str2 = str2.split('').sort().join('');
+  console.log(sorted_str1);
+  console.log(sorted_str2);
+  if(sorted_str1 === sorted_str2){
+    console.log('anagrams');
+    }
+}
+// anagrams();
+
+
+</script>
+</html>
