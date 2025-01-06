@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            margin: auto;
+            padding: auto;
+            display: flex;
+            justify-content: center;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <button onclick="btn()">click me</button>
+    </div>
+    <script>
+        function btn() {
+            if (document.getElementById("box").style.background == "red") {
+                document.getElementById("box").style.background = "black";
+            }
+            else {
+                document.getElementById("box").style.background = "red";
+            }
+        }
+    </script>
+</body> 
+
+</html>
