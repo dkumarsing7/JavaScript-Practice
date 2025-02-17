@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        /* input {
+            font-size: 16px; 
+            color: #333;
+            font-family: Arial, sans-serif; 
+            text-align: left; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            outline: none; 
+        }
+
+        input::placeholder {
+            color: #888; 
+            font-style: italic; 
+        } */
+
+        #title {
+            font-size: 16px; /* Label text size */
+            color: #555; /* Label text color */
+            font-weight: bold; /* Make the label bold */
+            margin-bottom: 5px; /* Space between label and input */
+            display: block; /* Make the label appear above the input */
+            }
+
+        input {
+            font-size: 14px;
+            color: #333;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width:  15%;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        select {
+            font-size: 16px;
+            color: #333;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+            width: 100px;
+        }
+
+        select option {
+            font-size: 16px;
+            color: #333;
+            background-color: #fff;
+        }
+
+        select:hover {
+            border-color: #007bff;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+
+    </style>
+    </head>
+    <body>
+        <h1>Calculator </h1>
+        <input type="text" id="inp1" placeholder="Enter number 1">
+        <p></p>
+        <input type="text" id="inp2" placeholder="Enter number 2">
+        <p></p>
+        <select name id="op">
+            <option value="add">+</option>
+            <option value="sub">-</option>
+            <option value="mul">*</option>
+            <option value="div">/</option>
+        </select>
+        <button onclick="calculate()">Calculate</button>
+        <h2 id="output">Output : </h2>
+    </body>
+    <script>
+        let calculate =()=>{
+            let text1 = document.querySelector("#inp1").value;
+            let text2 = document.querySelector("#inp2").value;
+            let op = document.querySelector("#op").selectedOptions[0].innerHTML; ;
+            let data = document.querySelector("#output");
+            text1 = parseInt(text1)
+            text2 = parseInt(text2)
+            if(data.innerText!=''){
+                data.innerText = 'Output : ';
+            }
+            
+            if(op == '+'){
+                data.innerText += text1 + text2;
+            }
+            else if(op == '-'){
+                data.innerText += text1 - text2;
+            }
+            else if(op == '*'){
+                data.innerText += text1 * text2;
+            }
+            else if(op == '/'){
+                data.innerText += text1 / text2;
+            }
+            
+        }
+    </script>
+</html>
