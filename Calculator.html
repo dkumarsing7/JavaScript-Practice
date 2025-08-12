@@ -5,115 +5,185 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <style>
-        /* input {
-            font-size: 16px; 
-            color: #333;
-            font-family: Arial, sans-serif; 
-            text-align: left; 
-            padding: 10px; 
-            border: 1px solid #ccc; 
-            border-radius: 5px; 
-            outline: none; 
-        }
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: #f0f8ff;
+}
+.out{
+    display: flex;
+}
+.main {
+    background: #F3FCFD;
+    /* border: 0.2px solid black; */
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.3),
+                      2px 4px rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    width: 320px; 
+    text-align: center;
+    margin: 20px;
+}
 
-        input::placeholder {
-            color: #888; 
-            font-style: italic; 
-        } */
 
-        #title {
-            font-size: 16px; /* Label text size */
-            color: #555; /* Label text color */
-            font-weight: bold; /* Make the label bold */
-            margin-bottom: 5px; /* Space between label and input */
-            display: block; /* Make the label appear above the input */
-            }
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
 
-        input {
-            font-size: 14px;
-            color: #333;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width:  15%;
-        }
+input {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 90%;
+    margin-bottom: 10px;
+}
 
-        input:focus {
-            border-color: #007bff;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 
-        select {
-            font-size: 16px;
-            color: #333;
-            padding: 8px 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #fff;
-            cursor: pointer;
-            width: 100px;
-        }
+select {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    width: 50%;
+    margin: 10px 0;
+}
 
-        select option {
-            font-size: 16px;
-            color: #333;
-            background-color: #fff;
-        }
+select:hover {
+    border-color: #007bff;
+}
 
-        select:hover {
-            border-color: #007bff;
-        }
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 
-        select:focus {
-            outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
+.cal {
+    width: 90%;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.2);
+}
 
+.cal:hover {
+    background: linear-gradient(45deg, #0056b3, #00a2d4);
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.cal:active {
+    transform: scale(0.95);
+    box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.output {
+    font-size: 20px;
+    font-weight: bold;
+    color: .333;
+    margin-top: 15px;
+}
 
     </style>
     </head>
     <body>
-        <h1>Calculator </h1>
-        <input type="text" id="inp1" placeholder="Enter number 1">
-        <p></p>
-        <input type="text" id="inp2" placeholder="Enter number 2">
-        <p></p>
-        <select name id="op">
-            <option value="add">+</option>
-            <option value="sub">-</option>
-            <option value="mul">*</option>
-            <option value="div">/</option>
-        </select>
-        <button onclick="calculate()">Calculate</button>
-        <h2 id="output">Output : </h2>
+        <div class="out">
+            <div class="main">
+                <h1>Calculator </h1>
+                <input type="text" class="inp1" placeholder="Enter number 1">
+                <p></p>
+                <input type="text" class="inp2" placeholder="Enter number 2">
+                <p></p>
+                <select name class="op">
+                    <option value="add">+</option>
+                    <option value="sub">-</option>
+                    <option value="mul">*</option>
+                    <option value="div">/</option>
+                </select>
+
+                <button class="cal" onclick="calculate() ">Calculate</button>
+                <h2 class="output">Output : </h2>
+            </div>
+
+            <div class="main">
+                <h1>Calculator </h1>
+                <input type="text" class="inp" placeholder="Enter number 1"
+                    onkeydown="calculate2">
+
+                <button class="cal" onclick="calculate2() ">Calculate</button>
+                <h2 class="output2">Output : </h2>
+            </div>
+        </div>
     </body>
     <script>
-        let calculate =()=>{
-            let text1 = document.querySelector("#inp1").value;
-            let text2 = document.querySelector("#inp2").value;
-            let op = document.querySelector("#op").selectedOptions[0].innerHTML; ;
-            let data = document.querySelector("#output");
-            text1 = parseInt(text1)
-            text2 = parseInt(text2)
-            if(data.innerText!=''){
-                data.innerText = 'Output : ';
-            }
-            
-            if(op == '+'){
-                data.innerText += text1 + text2;
-            }
-            else if(op == '-'){
-                data.innerText += text1 - text2;
-            }
-            else if(op == '*'){
-                data.innerText += text1 * text2;
-            }
-            else if(op == '/'){
-                data.innerText += text1 / text2;
-            }
-            
+ document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".inp1").addEventListener("input", calculate);
+    document.querySelector(".inp2").addEventListener("input", calculate);
+    document.querySelector(".op").addEventListener("change", calculate);
+    document.querySelector(".inp").addEventListener("input", calculate2);
+});
+
+let calculate = () => {
+    let text1 = document.querySelector(".inp1").value;
+    let text2 = document.querySelector(".inp2").value;
+    let op = document.querySelector(".op").selectedOptions[0].innerHTML;
+    let data = document.querySelector(".output");
+
+    text1 = parseFloat(text1);
+    text2 = parseFloat(text2);
+
+    if (!isNaN(text1) && !isNaN(text2)) {
+        let result;
+        if (op === '+') {
+            result = text1 + text2;
+        } else if (op === '-') {
+            result = text1 - text2;
+        } else if (op === '*') {
+            result = text1 * text2;
+        } else if (op === '/') {
+            result = text2 !== 0 ? text1 / text2 : "Cannot divide by zero";
         }
+        data.innerText = 'Output : ' + result;
+    } else {
+        data.innerText = 'Output : ';
+    }
+};
+
+let calculate2 = () => {
+    let text = document.querySelector(".inp").value;
+    let data1 = document.querySelector(".output2");
+
+    try {
+        let result = eval(text);
+        data1.innerText = 'Output : ' + result;
+    } catch (error) {
+        data1.innerText = 'Output : Invalid Expression';
+    }
+};
+
+
     </script>
 </html>
